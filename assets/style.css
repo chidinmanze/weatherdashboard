@@ -1,12 +1,17 @@
 
 .jumbotron {
     background-image: linear-gradient(#ffffff, #3f8de6);
-    border-bottom: darkblue solid 10px;
-}
+  }
 
 h1 {
     text-align: center;
     color: white;
     font-size: 60px;
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  }
+
+  #results {
+    border-color: dimgray solid 2px;
+    text-decoration-color: black;
+   
   }

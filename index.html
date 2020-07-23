@@ -17,29 +17,95 @@
 </br>
         <div class="container">
 
-            <form>
-                <!-- City -->
-                <p>City</p>
-                <input id="city" type="text">
-                <br>
-                </br>
-
-               
-<br>
-<br>
-                <!-- Search button -->
-                <button id="search">Search</button>
-            </form>
-
-        </div>
-
-           <!-- Search results go here -->
-        <div id="results">
+            <div class="row">
+                <div class="col-4">
+        
+                    <div>  
+                        <form>
+                            <!-- City -->
+                            <p>City</p>
+                            <input id="city" type="text">
+                            <br>
+                            </br>
+                            <!-- Search button -->
+                            <button id="search">Search</button>
+                        </form>
+                    </div>
+                    <br>
+                    <div id="history" class="card" style="width: 10rem;">
+                            <div class="card-header">
+                                Past Searches
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"></li>
+                                <li class="list-group-item"></li>
+                                <li class="list-group-item"></li>
+                            </ul>
+                    </div>
+                    
+                </div>
+                <div class="col-8">
+                <!-- Search results go here -->
+                    <div id="results" ></div>
+                    <div id="temp"></div>
+                    <div id="humidity"></div>
+                    <div id="windSpeed"></div>
+                    <div id="uvIndex"></div>
+                </div>
 
             </div>
 
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col">
+                    <h2 id="5day"></h2>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+               
+                <div class="col-2"></div>
+                <div id="day1"class="col-2"></div>                             
+                <div id="day2" class="col-2"></div>
+                <div id="day3" class="col-2"></div>
+                <div id="day4" class="col-2"></div>
+                <div id="day5" class="col-2"> </div>
+            
+            </div>
+
+            <div class="row">
+               
+                <div class="col-2"></div>
+                <div id="day1Temp"class="col-2"></div>                             
+                <div id="day2Temp" class="col-2"></div>
+                <div id="day3Temp" class="col-2"></div>
+                <div id="day4Temp" class="col-2"></div>
+                <div id="day5Temp" class="col-2"> </div>
+            
+            </div>
+
+            <div class="row">
+               
+                <div class="col-2"></div>
+                <div id="day1Humid"class="col-2"></div>                             
+                <div id="day2Humid" class="col-2"></div>
+                <div id="day3Humid" class="col-2"></div>
+                <div id="day4Humid" class="col-2"></div>
+                <div id="day5Humid" class="col-2"> </div>
+            
+            </div>
+
+
+            
+                   
+        </div>
+
+
+
 
     
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
 
 </body>
