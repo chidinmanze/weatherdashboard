@@ -3,6 +3,7 @@ var cityInput = $("#city");
 
 nameList();
 
+// Display last searched city on page load
 for ( i=0 ; i < localStorage.length; i++ ) { 
    if(localStorage.getItem(localStorage.key(i)) == "last"){
        openWeatherCall(localStorage.key(i));
@@ -11,6 +12,7 @@ for ( i=0 ; i < localStorage.length; i++ ) {
        
 }
 
+// Call Open Weather API on click
 $("#search").on("click", function() {
     event.preventDefault();
     var city = cityInput.val();
@@ -24,12 +26,14 @@ function openWeatherCall(city) {
     var date = moment().format("MM/DD/YYYY");
     console.log(city);
       
+    // Current weather call
     $.ajax({
         url: queryURL,
         method: "GET"
         
     })
     
+    // Get results and store city name for the history bar
     .then(function(response) {
         
        localStorage.setItem(response.name, " ");
@@ -42,11 +46,13 @@ function openWeatherCall(city) {
         
         var queryURLUvi = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
         
-
+//  Weather icon call
         $.ajax({
             url: icon,
             method: "GET"
         })
+
+        // UVI Call
 
         $.ajax({
             url: queryURLUvi,
@@ -54,6 +60,8 @@ function openWeatherCall(city) {
         })
             
             .then(function(response2) { 
+
+            // Write current day info to page
                 
                  $("#results").html("<h2>" + response.name + " " + "(" + date + ")" + "</h2>");
                
@@ -65,6 +73,7 @@ function openWeatherCall(city) {
                 
                 $("#uvIndex").html("<p>" + "UV Index:" + " " + "<span>" + response2.value + "</span>" + "<p>");
                 
+            // UVI Index Color indicator
                 function getColors() {
                     if (response2.value <= 2) {
                         ("<span>").addClass("badge badge-success");
@@ -91,7 +100,7 @@ function openWeatherCall(city) {
                 getColors();
 
 
-        
+        // API Call for 5 Day Forecast
 
                 $.ajax({
                     url: queryURLFuture,
@@ -100,6 +109,7 @@ function openWeatherCall(city) {
 
                     .then(function(response3) {
                        
+                        // Save resopnses for 5 Day Forecast
                         var day1 = moment().add(1, 'days').format('LL'); 
                         var day2 = moment().add(2, 'days').format('LL'); 
                         var day3 = moment().add(3, 'days').format('LL'); 
@@ -112,7 +122,7 @@ function openWeatherCall(city) {
                         var temp4 = Math.round((response3.list[27].main.temp - 273.15) * 1.80 + 32)* 10 / 10;
                         var temp5 = Math.round((response3.list[35].main.temp - 273.15) * 1.80 + 32)* 10 / 10;
                         
-                       
+                    //    Write 5 Day Forecast content to page 
                         $("#5day").html("<h2>" + "5-Day Forecast" + "</h2>");
                         $("#day1").html("<h5>" + day1 + "</h5>");
                         $("#day2").html("<h5>" + day2 + "</h5>");
@@ -157,7 +167,7 @@ function setLast(city) {
 
 function nameList() {
     $("#past").empty();
-    for ( i=0 ; i < localStorage.length ; i++ ) { 
+    for ( i=0 ; i < localStorage.length; i++ ) { 
         var cityNames =localStorage.key(i);
         var cityList = $("<button>");
         $(cityList).addClass('list-group-item list-group-item-action');
