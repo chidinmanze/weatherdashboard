@@ -16,39 +16,44 @@
 <br>
 </br>
 
-<div class="container-fluid">
+<div id="search">
+                      
+        <form>
+            <!-- City -->
+            <p>City</p>
+            <input id="city" type="text">
+            <br>
+            </br>
+            <!-- Search button -->
+            <button id="search">Search</button>
+        </form>
+    
+    
+</div>
+    <div class="wrap">
 
-        <div class="row">
-                    <div class="col-4">
         
-                        <div>  
-                            <form>
-                                <!-- City -->
-                                <p>City</p>
-                                <input id="city" type="text">
-                                <br>
-                                </br>
-                                <!-- Search button -->
-                                <button id="search">Search</button>
-                            </form>
-                        </div>
-                        <br>
-                        
-                        
-                            <div id="history" class="card" style="width: 10rem;">
-                                <div class="card-header">
-                                    Past Searches
-                                </div>
-                                <div class="card-body text-dark">
-                                    <div class="list-group list-group-flush" id="past">
+                                
+                                
+                                    
+                        <div class="child child-2">
+                            
+                                <div class="card" style="width: 14rem;">
+                                    <div id="history" class="card-header">
+                                                Past Searches
+                                            </div>
+                                        
+                                          
+                                                <div id="past">
 
-                                    </div>
-            
-                                </div>
-                            </div>
+                                                </div>
                         
-                    </div>
-                    <div class="col-lg-8">
+                                </div>
+                        </div>
+            
+                
+
+                <div class="child child-3">
                     <!-- Search results go here -->
                         <div id="results" ></div>
                         <img id=icon>
@@ -56,21 +61,14 @@
                         <div id="humidity"></div>
                         <div id="windSpeed"></div>
                         <div id="uvIndex"></div>
-                    </div>
-            </div>        
-                
-        </div>
-  
+                   
+                </div>        
+        
+      
 
+            
 
-        <div class="container-fluid" id="resultsDiv">
-
-            <div class="row">
-
-            </div>
-
-
-                
+            <div class="child child-4">
                 <div class="row">
                     <div class="col-6"></div>
                     <div class="col">
@@ -111,24 +109,20 @@
                             <div id="day4Humid" class="col-2"></div>
                             <div id="day5Humid" class="col-2"> </div>
                     
-                        </div>
+                       </div>
+            </div>
+                
                         
 
 
-                </div>
+           
                 
-            </div>
+    </div>
                     
-                    
-                    
+                
 
 
             
-       
-
-
-
-
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
