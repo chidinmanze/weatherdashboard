@@ -3,7 +3,7 @@ https://chidinmanze.github.io/weatherdashboard/
 
 The Weather Dashboard allows users to get current and forecasted weather for the next five days when searching any city.
 
-<img src="https://github.com/chidinmanze/weatherdashboard/blob/master/assets/WeatherDashboardScreenshot.JPG"
+<img src="https://github.com/chidinmanze/weatherdashboard/blob/master/assets/WeatherDashboardScreenshot.JPG">
 
 ## Features
 - Current day forecast
