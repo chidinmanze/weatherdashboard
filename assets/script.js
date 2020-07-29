@@ -42,9 +42,9 @@ function openWeatherCall(city) {
      
         var temp = (response.main.temp - 273.15) * 1.80 + 32;
         var tempRounded = Math.round(temp * 10) / 10;
-        var icon = "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png"
+        var icon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png"
         
-        var queryURLUvi = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
+        var queryURLUvi = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
         
 //  Weather icon call
         $.ajax({
